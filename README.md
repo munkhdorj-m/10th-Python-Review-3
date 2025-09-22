@@ -9,11 +9,18 @@ https://drive.google.com/file/d/1_Spi5yo7H50BZ933mYh-zUveuMAroKe4/view?usp=shari
 
 **Problem:**
 
-Print all even numbers from 1 to 50.
+Input a number and find the number of digits.
 
 **Example:**
 
-    Output: 2 4 6 8 10 ... 48 50  
+    Input: 1234  
+    Output: 4
+    
+    Input: 7  
+    Output: 1
+    
+    Input: 0  
+    Output: 1
 
 ---
 
@@ -21,15 +28,18 @@ Print all even numbers from 1 to 50.
 
 **Problem:**
 
-Find the reverse of a given number.
+Input a number and calculate its factorial using a loop.
 
 **Example:**
 
-    Input: 1234  
-    Output: 4321  
+    Input: 5  
+    Output: 120   # 5*4*3*2*1
     
-    Input: 907  
-    Output: 709  
+    Input: 0  
+    Output: 1
+    
+    Input: 6  
+    Output: 720 
 
 
 ---
@@ -38,15 +48,15 @@ Find the reverse of a given number.
 
 **Problem:**
 
-Find the sum of numbers from 1 to a given number.
+Input a number n and print all prime numbers up to n.
 
 **Example**
 
-    Input: 5  
-    Output: 15   # (1 + 2 + 3 + 4 + 5)  
-    
     Input: 10  
-    Output: 55  
+    Output: 2 3 5 7
+    
+    Input: 20  
+    Output: 2 3 5 7 11 13 17 19
     
 ---
 
@@ -54,29 +64,38 @@ Find the sum of numbers from 1 to a given number.
 
 **Problem:**
 
-Input a number and check if it is a prime number.
+Input n numbers into a list, then calculate their average.
 
 **Example**
 
-    Input: 7  
-    Output: True  
+    Input: [3, 5, 7]  
+    Output: 5.0
     
-    Input: 12  
-    Output: False
+    Input: [10, 20, 30, 40]  
+    Output: 25.0
     
-    Input: 1  
-    Output: False
+    Input: [1]  
+    Output: 1.0
     
 ---
 
-## Exercise 5
+## Exercise 5 (Optional)
 
 **Problem:**
+Make a game where the program picks a random number between 1 and 20.
+The user keeps guessing until the correct number is guessed.
 
-Print all perfect squares up to 500.
 
 **Example**
 
-    Output: 1 4 9 16 25 36 ... 484  
+    Program: I have chosen a number between 1 and 20. Guess it!
+    User: 10
+    Program: Too high!
+    User: 5
+    Program: Too low!
+    User: 7
+    Program: Correct! You guessed it in 3 tries.
+
+    
 ---
 

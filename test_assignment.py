@@ -33,26 +33,28 @@ def test2(n, expected):
     assert check_contains_loop(factorial)
 
 
-# Exercise 3: Prime numbers up to n
+# Exercise 3: Prime numbers up to n (printed)
 @pytest.mark.parametrize("n, expected", [
-    (10, [2, 3, 5, 7]),
-    (20, [2, 3, 5, 7, 11, 13, 17, 19]),
-    (2, [2]),
+    (10, ["2", "3", "5", "7"]),
+    (20, ["2", "3", "5", "7", "11", "13", "17", "19"]),
+    (2, ["2"]),
     (1, []),
     (0, [])
 ])
-def test3(n, expected):
-    assert primes_up_to(n) == expected
+def test3(capsys, n, expected):
+    primes_up_to(n)
+    captured = capsys.readouterr()
+    output = captured.out.strip().split()
+    assert output == expected
     assert check_contains_loop(primes_up_to)
 
-
-# Exercise 5: Average of list
+# Exercise 4: Average of list
 @pytest.mark.parametrize("lst, expected", [
     ([3, 5, 7], 5.0),
     ([10, 20, 30, 40], 25.0),
     ([1], 1.0),
     ([2, 2, 2, 2], 2.0),
 ])
-def test5(lst, expected):
+def test4(lst, expected):
     assert average_of_list(lst) == expected
     assert check_contains_loop(average_of_list)

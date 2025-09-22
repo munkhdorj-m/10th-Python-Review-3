@@ -1,7 +1,7 @@
 # You can remove 'pass' if you written code in the function 
 # Exercise 1
 
-def count_digits():
+def count_digits(num):
     # Write your code here
     pass
 

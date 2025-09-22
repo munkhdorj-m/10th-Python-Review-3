@@ -1,6 +1,6 @@
 import pytest
 import inspect
-from assignment import print_even_numbers, reverse_number, sum_of_n_numbers, is_prime, print_perfect_squares
+from assignment import count_digits, factorial, primes_up_to, average_of_list
 
 
 def check_contains_loop(function):
@@ -8,61 +8,51 @@ def check_contains_loop(function):
     return 'for' in source or 'while' in source
 
 
-# Exercise 1 (Print even numbers)
-def test1(capsys):
-    print_even_numbers()
-    captured = capsys.readouterr()
-    output = captured.out.strip().split()
-    expected = list(map(str, range(2, 51, 2)))
-    assert output == expected
-    assert check_contains_loop(print_even_numbers)
-
-
-# Exercise 2 (Reverse number)
+# Exercise 1: Number of digits
 @pytest.mark.parametrize("num, expected", [
-    (1234, 4321),
-    (907, 709),
-    (5, 5),
-    (1000, 1),
-    (0, 0)
+    (1234, 4),
+    (7, 1),
+    (0, 1),
+    (987654, 6)
 ])
-def test2(num, expected):
-    assert reverse_number(num) == expected
-    assert check_contains_loop(reverse_number)
+def test1(num, expected):
+    assert count_digits(num) == expected
+    assert check_contains_loop(count_digits)
 
 
-# Exercise 3 (Sum of numbers 1..n)
-@pytest.mark.parametrize("num, expected", [
-    (5, 15),
-    (10, 55),
+# Exercise 2: Factorial using loop
+@pytest.mark.parametrize("n, expected", [
+    (5, 120),
+    (0, 1),
+    (6, 720),
     (1, 1),
-    (0, 0),
-    (7, 28)
+    (3, 6)
 ])
-def test3(num, expected):
-    assert sum_of_n_numbers(num) == expected
-    assert check_contains_loop(sum_of_n_numbers)
+def test2(n, expected):
+    assert factorial(n) == expected
+    assert check_contains_loop(factorial)
 
 
-# Exercise 4 (Prime check)
-@pytest.mark.parametrize("num, expected", [
-    (7, True),
-    (12, False),
-    (1, False),
-    (2, True),
-    (29, True),
-    (30, False)
+# Exercise 3: Prime numbers up to n
+@pytest.mark.parametrize("n, expected", [
+    (10, [2, 3, 5, 7]),
+    (20, [2, 3, 5, 7, 11, 13, 17, 19]),
+    (2, [2]),
+    (1, []),
+    (0, [])
 ])
-def test4(num, expected):
-    assert is_prime(num) == expected
-    assert check_contains_loop(is_prime)
+def test3(n, expected):
+    assert primes_up_to(n) == expected
+    assert check_contains_loop(primes_up_to)
 
 
-# Exercise 5 (Print perfect squares up to 500)
-def test5(capsys):
-    print_perfect_squares()
-    captured = capsys.readouterr()
-    output = captured.out.strip().split()
-    expected = [str(i * i) for i in range(1, 23) if i * i <= 500]
-    assert output == expected
-    assert check_contains_loop(print_perfect_squares)
+# Exercise 5: Average of list
+@pytest.mark.parametrize("lst, expected", [
+    ([3, 5, 7], 5.0),
+    ([10, 20, 30, 40], 25.0),
+    ([1], 1.0),
+    ([2, 2, 2, 2], 2.0),
+])
+def test5(lst, expected):
+    assert average_of_list(lst) == expected
+    assert check_contains_loop(average_of_list)

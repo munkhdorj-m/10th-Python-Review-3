@@ -99,3 +99,38 @@ The user keeps guessing until the correct number is guessed.
     
 ---
 
+## Exercise 6 (Optional)
+
+**Problem:**
+Bulls and Cows game:
+
+- The computer generates a random 3-digit number (with non-repeating digits).
+- The user guesses the number.
+- After each guess, the program tells:
+    - Bulls: Digits that are correct and in the right place.
+    - Cows: Digits that are correct but in the wrong place.
+- The game continues until the user guesses correctly (3 bulls).
+
+**Example**
+
+    Computer has chosen a 3-digit number. Try to guess it!
+    
+    Enter guess: 123
+    Result: 1 bull(s), 1 cow(s)
+    
+    Enter guess: 456
+    Result: 0 bull(s), 0 cow(s)
+    
+    Enter guess: 321
+    Result: 0 bull(s), 3 cow(s)
+    
+    Enter guess: 135
+    Result: 1 bull(s), 2 cow(s)
+    
+    Enter guess: 159
+    Result: 3 bull(s), 0 cow(s)
+    
+    Congratulations! You guessed the number: 159
+    
+---
+
